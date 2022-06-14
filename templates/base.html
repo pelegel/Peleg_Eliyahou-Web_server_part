@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include('styles.html') %}
+    {% include('js.html') %}
+
+</head>
+<body>
+    {% include('header.html') %}
+    {% block tohen %}
+            <h3 id="base-message">Hope you will like it!</h3>
+    {% endblock %}
+    {% include('footer.html') %}
+
+</body>
+</html>
