@@ -90,7 +90,7 @@ users = {'user1': {'name': 'Yossi', 'email': 'Yossi@gmail.com', 'password': 'Yos
 #list of user's details dictionaries
 users_details = list(users.values())
 
-# get all the user's emails list
+# get all the user's emails and usernames list
 emails =[]
 for i in range(len(users_details)):
     emails.append(users_details[i]['email'])
@@ -99,7 +99,8 @@ usernames =[]
 for i in range(len(users_details)):
     usernames.append(users_details[i]['name'])
 
-# function to get the user's index in the users' dict
+
+# functions to get the user's index in the users' dict by email/username
 def get_user_index_by_email(email):
     for i in range(len(users_details)):
         if users_details[i]['email'] == email:
@@ -118,7 +119,7 @@ def log_out():
     return redirect(url_for('assignment3_2_page'))
 
 
-
+#dictionary of the session
 @app.route('/session')
 def session_func():
     return jsonify(dict(session))

@@ -33,6 +33,16 @@
     <h3 class="user_list">{{ users_details[i] }}</h3><br>
     {% endfor %}
 </div>
+
+    <h2 class="header">Users Details:</h2><br>
+    {% for i in range(users_details | length) %}
+            <div class="container">
+
+    <h3>Name: {{ users_details[i]['name'] }}</h3>
+        <h4>Email: {{ users_details[i]['email'] }}</h4>
+</div>
+    {% endfor %}
+
 {% endif %}
 
 
