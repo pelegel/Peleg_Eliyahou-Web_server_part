@@ -1,3 +1,5 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
 :root {
     --lightPink:  rgb(247,202,201);
     --fucciaPink: rgb(216, 60, 101);
@@ -299,6 +301,7 @@ a:hover {
     text-align: center;
 }
 /*end super*/
+
 
 
 /* footer */

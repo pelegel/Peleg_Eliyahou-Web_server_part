@@ -36,6 +36,7 @@ def assignment3_1_page():
 
 @app.route('/assignment3_2',  methods=['GET', 'POST'])
 def assignment3_2_page():
+    #for search
     if request.method == 'GET':
         if 'email' in request.args:
             email = request.args['email']
@@ -58,6 +59,8 @@ def assignment3_2_page():
         else:
             return render_template('assignment3_2.html')
 
+
+    #for log in
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
