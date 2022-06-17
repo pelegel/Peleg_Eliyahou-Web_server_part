@@ -9,7 +9,7 @@
     </header>
 
 
-
+{# loop over artists dictionary and split to listed categories #}
     {% for artist, type in artists.items() %}
 
         {% if type| lower() =="female singer" %}
@@ -58,8 +58,20 @@
     </div>
     <br>
 
-
+{# message from base page #}
     {{ super() }}
+    <br><br><br><br>
+
+
+{# user recomendations form #}
+    <form id="user_recommendations" action="/share_recommendation/" method="post">
+        <h3>We would love to know about your music recommendations!</h3>
+        <p>Artist Name</p>
+        <input type="text" id="artist" name="artist" required><br><br>
+        <p>Artist Type (Male Singer/Female Singer/Band)</p>
+        <input type="text" id="artistType" name="artistType" required><br><br>
+        <input type="submit" id="recommendationBtn" value="Share"><br><br><br>
+    </form>
     <br>
 
 {% endblock %}

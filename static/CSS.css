@@ -313,10 +313,6 @@ a:hover {
 /* end footer */
 
 
-#userSearchResults {
-    text-align: center;
-}
-
 .user_list {
     text-align: center;
 }
@@ -335,4 +331,20 @@ a:hover {
 #user_greeting {
     color: var(--fucciaPink);
     font-size: 25px;
+}
+
+#user_recommendations{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    border: var(--fucciaPink) 3px solid;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 30%;
+    padding: 10px;
+    align-content: center;
+    overflow: auto;
 }

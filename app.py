@@ -22,12 +22,11 @@ def index_func():
 def contact_page():
     return render_template('Contact.HTML')
 
-
+artists = {'maroon 5': 'Band', 'justin bieber': 'Male singer', 'taylor swift': 'female Singer',
+               'Lady gaga': 'Female Singer', 'noa kiler': 'Female Singer'}
 
 @app.route('/assignment3_1')
 def assignment3_1_page():
-    artists = {'maroon 5': 'Band', 'justin bieber': 'Male singer', 'taylor swift': 'female Singer',
-               'Lady gaga': 'Female Singer', 'noa kiler': 'Female Singer'}
     females = []
     males = []
     bands = []
@@ -120,7 +119,15 @@ def get_user_index_by_username(username):
 def log_out():
     session['loggedin'] = False
     session.clear()
-    return redirect('/assignment3_2')
+    return redirect(url_for('assignment3_2_page'))
+
+
+@app.route("/share_recommendation/", methods=['POST'])
+def share_recommendation():
+    artist = request.form['artist']
+    artist_type = request.form['artistType']
+    artists[artist] = artist_type
+    return redirect('/assignment3_1')
 
 
 #dictionary of the session

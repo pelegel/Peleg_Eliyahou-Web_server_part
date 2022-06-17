@@ -9,23 +9,28 @@
     {# --------------------------- search form ----------------------------#}
     <h1 class="header">Search User</h1>
 
+    {#  show error message if exists #}
+    {% if message == 'not found' %}
+        <h3 class="error">User Not Found</h3>
+    {% endif %}
+
+    {#  search user form #}
     <form action="/assignment3_2" method="get">
         <input type="text" name="email" placeholder="Email"><br>
         <input type="submit" id="findUserBtn" value="Find User"><br><br><br>
     </form>
 
-
+    {#  if user exists - show its details #}
     {% if email %}
-        <div id="userSearchResults">
+        <div id="userSearchResults" class="container">
             <h2>The User's Details:</h2>
             <h4>Username: {{ username }}</h4>
             <h4>Email: {{ email }}</h4>
             <h4>Password: {{ user_password }}</h4>
         </div>
-
     {% endif %}
 
-
+    {#  show all users details #}
     {% if users_details %}
         <div class="user_list">
             <h2 class="header">Users Details:</h2>
@@ -40,32 +45,27 @@
     {% endif %}
 
 
-    {% if message == 'not found' %}
-        <h3 class="error">User Not Found</h3>
-    {% endif %}
-
-
     {# ........................... end search form ........................#}
 
-
+    <br><br>
 
     {# ------------------------ registration form -------------------------#}
 
     {% if not session['loggedin'] %}
-
+        {# show error message if exists #}
         <h1 class="header">Log-In</h1>
         {% if message and request.method == 'POST' %}
             <h3 class="error">{{ message }}</h3>
         {% endif %}
 
-
+        {# log in form #}
         <form action="/assignment3_2" method="post">
             <input type="text" name="username" placeholder="Username"><br>
             <input type="text" name="password" placeholder="Password"><br>
             <input type="submit" id="loginBtn" value="Log In"><br><br><br>
         </form>
 
-
+        {# log out #}
     {% else %}
         <form action="/logout/" method="post">
             <button id="logoutBtb" class="button">Log Out</button>
