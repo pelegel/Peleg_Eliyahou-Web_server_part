@@ -5,7 +5,7 @@ from datetime import timedelta
 from flask import request, session, jsonify
 
 app = Flask(__name__)
-#123
+
 
 app.secret_key = '123'
 app.config['SESSION_PERMANENT'] = True
@@ -18,7 +18,7 @@ def index_func():
     return render_template('Home.HTML')
 
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact_page():
     return render_template('Contact.HTML')
 
@@ -120,7 +120,7 @@ def get_user_index_by_username(username):
 def log_out():
     session['loggedin'] = False
     session.clear()
-    return redirect(url_for('assignment3_2_page'))
+    return redirect('/assignment3_2')
 
 
 #dictionary of the session

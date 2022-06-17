@@ -23,7 +23,6 @@ function calcTime() {
 var times = 0;
 var contact = 0;
 function submitForm() {
-
   if (agree.checked == false && times ==0){
     window.alert("Are you sure you don't want to get promotion emails?");
     times+=1;
